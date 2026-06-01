@@ -36,13 +36,33 @@ scripts/
 
 ## Install
 
+### Codex CLI
+
 Copy `skills/deep-analysis` into your Codex skills directory:
 
 ```powershell
+# Windows (PowerShell)
 Copy-Item -Recurse .\skills\deep-analysis $env:USERPROFILE\.codex\skills\
 ```
 
+```bash
+# macOS / Linux
+cp -r skills/deep-analysis ~/.codex/skills/
+```
+
 Restart Codex so the skill metadata can be discovered.
+
+### Other AI agents
+
+The skill files are platform-agnostic Markdown + YAML. You can load `SKILL.md` and `methods/*.md` into any agent that supports structured instruction files (Cline, OpenAI Agents SDK, custom workflows).
+
+### Validate installation
+
+```bash
+python scripts/validate_skill.py
+```
+
+Should print `Deep Analysis skill validation passed.`
 
 ## Example Prompts
 
